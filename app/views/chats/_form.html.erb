@@ -1,0 +1,16 @@
+<%= form_with(model: @chat, local: true, url: choose_index_or_edit) do |form| %>
+ <% if @chat.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @chat.errors.count %>件のエラーがあります。</h2>
+    <ul>
+      <% @chat.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="chat_content">
+    <%= form.text_area :'content'%>
+  </div>
+  <%= form.submit 'つぶやく', class: 'submit_btn'%>
+<% end %>

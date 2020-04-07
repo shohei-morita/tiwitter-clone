@@ -1,6 +1,6 @@
 class ChatsController < ApplicationController
-  before_action :set_chatter, only: [:edit, :update, :destroy]
-  before_action :order_chatters, only: [:index, :create, :confirm]
+  before_action :set_chat, only: [:edit, :update, :destroy]
+  before_action :order_chat, only: [:index, :create, :confirm]
 
   def index
     @chat = Chat.new
@@ -8,7 +8,7 @@ class ChatsController < ApplicationController
 
   def create
     @chat = Chat.new(chat_params)
-    if params[:bacl]
+    if params[:back]
       render :index
     else
       if @chat.save
@@ -17,6 +17,28 @@ class ChatsController < ApplicationController
         render :index
       end
     end
+  end
+
+  def show; end
+
+  def edit; end
+
+  def update
+    if set_chat.update(chat_params)
+      redirect_to chats_path, notice: "つぶやきを編集しました！"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @chat.destroy
+    redirect_to chats_path, notice: "つぶやきを削除しました！"
+  end
+
+  def confirm
+    @chat = Chat.new(chat_params)
+    render :index if @chat.invalid?
   end
 
   private
