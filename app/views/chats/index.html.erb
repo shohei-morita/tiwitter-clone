@@ -1,2 +1,13 @@
-<h1>Chats#index</h1>
-<p>Find me in app/views/chats/index.html.erb</p>
+<h2>ささやき</h2>
+<%= render 'form' %>
+
+<table class="index_table">
+    <th>つぶやき一覧</th>
+<% @chats.each do |chat| %>
+  <tr>
+    <td><%= chat.content %></td>
+    <td><%= link_to 'つぶやきの編集', edit_chatter_path(chat.id) %></td>
+    <td><%= link_to 'つぶやきの削除', chatter_path(chat.id), method: :delete, data: {confirm: '本当に削除しますか？'} %></td>
+  </tr>
+<% end %>
+</table>
