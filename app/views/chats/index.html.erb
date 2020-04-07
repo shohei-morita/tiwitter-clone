@@ -6,8 +6,8 @@
 <% @chats.each do |chat| %>
   <tr>
     <td><%= chat.content %></td>
-    <td><%= link_to 'つぶやきの編集', edit_chatter_path(chat.id) %></td>
-    <td><%= link_to 'つぶやきの削除', chatter_path(chat.id), method: :delete, data: {confirm: '本当に削除しますか？'} %></td>
+    <td><%= link_to 'つぶやきの編集', edit_chat_path(chat.id) %></td>
+    <td><%= link_to 'つぶやきの削除', chat_path(chat.id), method: :delete, data: {confirm: '本当に削除しますか？'} %></td>
   </tr>
 <% end %>
 </table>

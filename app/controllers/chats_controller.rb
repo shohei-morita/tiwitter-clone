@@ -1,6 +1,6 @@
 class ChatsController < ApplicationController
   before_action :set_chat, only: [:edit, :update, :destroy]
-  before_action :order_chat, only: [:index, :create, :confirm]
+  before_action :order_chats, only: [:index, :create, :confirm]
 
   def index
     @chat = Chat.new
