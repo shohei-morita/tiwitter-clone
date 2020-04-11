@@ -1,9 +1,9 @@
 <h3>以下の内容でつぶやく</h3>
-
 <%= form_with(model: @chat, local: true) do |form| %>
-  <%= form.hidden_field :content %>
-
-  <p><%= @chat.content %></p>
-  <%= form.submit 'つぶやく' %>
-  <%= form.submit '戻る', name: 'back' %>
+  <div class="form-group">
+    <%= form.hidden_field :content %>
+    <p><%= @chat.content %></p>
+    <%= form.submit 'つぶやく', class:'btn-primary' %>
+    <%= form.submit '戻る', name: 'back', class:'btn-info'%>
+  </div>
 <% end %>

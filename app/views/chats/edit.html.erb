@@ -1,3 +1,7 @@
 <h2>つぶやきを編集する</h2>
-
-<%= render 'form' %>
+<div class="form-group">
+  <%= render 'form' %>
+  <%= form_with(model: @chat, local: true) do |form| %>
+  <%= form.submit '戻る', name: 'back', class:'btn-default'%>
+  <% end %>
+</div>

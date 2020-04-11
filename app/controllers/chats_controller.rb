@@ -1,6 +1,6 @@
 class ChatsController < ApplicationController
   before_action :set_chat, only: [:edit, :update, :destroy]
-  before_action :order_chats, only: [:index, :create, :confirm]
+  before_action :chats_order, only: [:index, :create, :update, :confirm]
 
   def index
     @chat = Chat.new
@@ -24,10 +24,14 @@ class ChatsController < ApplicationController
   def edit; end
 
   def update
-    if set_chat.update(chat_params)
-      redirect_to chats_path, notice: "つぶやきを編集しました！"
+    if params[:back]
+      redirect_to chats_path
     else
-      render :edit
+      if set_chat.update(chat_params)
+        redirect_to chats_path, notice: "つぶやきを編集しました！"
+      else
+        render :edit
+      end
     end
   end
 
@@ -51,7 +55,7 @@ class ChatsController < ApplicationController
     @chat = Chat.find(params[:id])
   end
 
-  def order_chats
+  def chats_order
     @chats = Chat.order(id: :DESC)
   end
 

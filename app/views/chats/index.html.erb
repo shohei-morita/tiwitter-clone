@@ -1,13 +1,15 @@
-<h2>ささやき</h2>
-<%= render 'form' %>
-
-<table class="index_table">
-    <th>つぶやき一覧</th>
-<% @chats.each do |chat| %>
-  <tr>
-    <td><%= chat.content %></td>
-    <td><%= link_to 'つぶやきの編集', edit_chat_path(chat.id) %></td>
-    <td><%= link_to 'つぶやきの削除', chat_path(chat.id), method: :delete, data: {confirm: '本当に削除しますか？'} %></td>
-  </tr>
-<% end %>
-</table>
+    <div class="contents">
+      <%= render 'form' %>
+    </div>
+    <div class="topic">
+      <h4>ささやき一覧</h4>
+      <table class="table table-striped">
+        <% @chats.each do |chat| %>
+        <tr>
+          <td><%= chat.content %></td>
+          <td><%= link_to '編集', edit_chat_path(chat.id), class:'btn btn-primary' %></td>
+          <td><%= link_to '削除', chat_path(chat.id), method: :delete, data: {confirm: '本当に削除しますか？'}, class:'btn btn-danger' %></td>
+        <% end %>
+        </tr>
+      </table>
+    </div>
