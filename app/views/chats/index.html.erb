@@ -3,7 +3,7 @@
     <%= render 'form' %>
   <% end %>
   <div class='main'>
-    <h4>ささやき一覧</h4>
+    <h4>おしゃべり一覧</h4>
     <p><%= notice %></p>
     <table class='table table-striped'>
     <% @chats.each do |chat| %>
@@ -12,9 +12,9 @@
       </tr>
       <tr>
         <td>
-          <div class='operators'>
-            <%= link_to 'しゃべりなおす', edit_chat_path(chat.id), class:'btn-operate btn-primary' %>
-            <%= link_to '発言を取り消す', chat_path(chat.id), method: :delete, data: {confirm: '本当に取り消しますか？'}, class:'btn-operate btn-danger' %>
+          <div class='operate-btns'>
+            <%= link_to 'しゃべりなおす', edit_chat_path(chat.id), class:'operate-btn btn-primary' %>
+            <%= link_to '発言を取り消す', chat_path(chat.id), method: :delete, data: {confirm: '本当に取り消しますか？'}, class:'operate-btn btn-danger' %>
           </div>
         </td>
       </tr>

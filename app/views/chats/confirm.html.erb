@@ -3,7 +3,7 @@
   <%= form_with(model: @chat, local: true) do |form| %>
   <%= form.hidden_field :content %>
   <p class='confirm-text'><%= @chat.content %></p>
-  <div class='confirm-operators'>
+  <div class='confirm-btns'>
     <%= form.submit 'しゃべる', class:'confirm-btn btn-primary' %>
     <%= form.submit 'だまる', name:'back', class:'confirm-btn btn-info' %>
   <% end %>
