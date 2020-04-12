@@ -14,7 +14,7 @@ class ChatsController < ApplicationController
       render :index
     else
       if @chat.save
-        redirect_to chats_path, notice: 'つぶやきを投稿しました！'
+        redirect_to chats_path, notice: 'しゃべりました！'
       else
         render :index
       end
@@ -28,7 +28,7 @@ class ChatsController < ApplicationController
       redirect_to chats_path
     else
       if set_chat.update(chat_params)
-        redirect_to chats_path, notice: "つぶやきを編集しました！"
+        redirect_to chats_path, notice: "しゃべりなおしました！"
       else
         render :edit
       end
@@ -37,7 +37,7 @@ class ChatsController < ApplicationController
 
   def destroy
     @chat.destroy
-    redirect_to chats_path, notice: "つぶやきを削除しました！"
+    redirect_to chats_path, notice: "発言を取り消しました"
   end
 
   def confirm

@@ -4,29 +4,27 @@
     <title>Chatter</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width">
+    <meta name='viewport' content='width=device-width'>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-    <body>
-      <nav class="navbar navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="">Chatter !</a>
-            <ul class="nav navbar-nav">
-              <li><%= link_to "TOP", chats_path %></li>
-              <li><a href="">INFO</a></li>
+  <body>
+    <div class='wrapper'>
+      <nav class='navbar navbar-fixed-top'>
+        <div class='container-fluid'>
+          <div class='navbar-header'>
+            <%= link_to 'Chatter !', chats_path, class:'navbar-brand' %>
+            <ul class='nav navbar-nav'>
+              <li><%= link_to 'TOP', chats_path %></li>
+              <li><%= link_to 'INFO', info_chats_path %></li>
             </ul>
           </div>
         </div>
       </nav>
-    <%= yield %>
-    </body>
-  <div class="container-fluid">
-    <div class="row">
-      <footer class="footer col-md-12">
+      <%= yield %>
+      <footer>
         <p>2020年04月 森田 祥平 制作</p>
       </footer>
     </div>
-  </div>
+  </body>
 </html>

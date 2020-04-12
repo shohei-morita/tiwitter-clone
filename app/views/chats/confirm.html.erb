@@ -1,7 +1,11 @@
-<h4>以下の内容で本当にささやいても良いですか？</h4>
-<%= form_with(model: @chat, local: true) do |form| %>
-    <%= form.hidden_field :content %>
-    <h3><%= @chat.content %></h3>
+<div class='container'>
+  <h3>以下の内容で本当にささやいても良いですか？</h3>
+  <%= form_with(model: @chat, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <p class='confirm-text'><%= @chat.content %></p>
+  <div class='confirm-operators'>
     <%= form.submit 'しゃべる', class:'confirm-btn btn-primary' %>
-    <%= form.submit 'だまる', name: 'back', class:'confirm-btn btn-info'%>
-<% end %>
+    <%= form.submit 'だまる', name:'back', class:'confirm-btn btn-info' %>
+  <% end %>
+  </div>
+</div>

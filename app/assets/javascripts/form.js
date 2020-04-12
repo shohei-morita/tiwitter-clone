@@ -1,14 +1,18 @@
 $(function(){
-  $("#input-text").on("keyup", function() {
-    let countMax = 140;
-    let countNum = String($(this).val().length);
-    let countDown = (countMax) - (countNum);
-    $("#counter").text("残り" + countDown + "文字");
+  var countMax = 140;
+  var text = $('#input-text').val().length;
+  var countDown = (countMax) - (text);
+  $('#counter').html('残り' + countDown + '文字');
+
+  $('#input-text').on('keydown', function() {
+    var text = String($(this).val().length);
+    var countDown = (countMax) - (text);
+    $('#counter').text('残り' + countDown + '文字');
 
     if(countDown <= 10) {
-      $("#counter").css({color: "#ff0000", fontWeight: "bold"});
+      $('#counter').css({color: '#ff0000', fontWeight: 'bold'});
     } else {
-      $("#counter").css({color: "#000000", fontWeight: "nomal"});
+      $('#counter').css({color: '#000000', fontWeight: 'nomal'});
     };
-});
+  });
 });

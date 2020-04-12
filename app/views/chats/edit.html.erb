@@ -1,7 +1,23 @@
-<h2>つぶやきを編集する</h2>
-<div class="form-group">
-  <%= render 'form' %>
-  <%= form_with(model: @chat, local: true) do |form| %>
-  <%= form.submit 'だまる', name: 'back', class:'silence-btn btn-default'%>
-  <% end %>
+<div class='container'>
+  <h2>つぶやきを編集する</h2>
+  <%= form_with(model: @chat, local: true, url: choose_index_or_edit) do |form| %>
+   <% if @chat.errors.any? %>
+    <div id='error_explanation'>
+      <h2><%= @chat.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @chat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <div class='form-group'>
+      <p id='counter'>残り140文字</p>
+      <%= form.text_area:'content', class:'form-control', id:'input-text', rows:3, placeholder:'なんでもしゃべって' %>
+    <div class='edit-btns'>
+      <%= form.submit 'しゃべる', class:'edit-btn btn-primary' %>
+      <%= form.submit 'だまる', name:'back', class:'edit-btn btn-info'%>
+    </div>
+      <% end %>
+  </div>
 </div>

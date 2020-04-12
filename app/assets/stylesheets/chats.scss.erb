@@ -1,5 +1,5 @@
 .container {
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 body {
@@ -13,72 +13,69 @@ body {
   background-color: #3366FF;
 }
 
-.info-header {
-  padding-bottom: 25%;
-  width: 100%;
-  background-size: cover;
-  background-image: url(<%= asset_path ('background.jpg') %>);
-  background-attachment: fixed;
+li a{
+  margin-top:12px;
+  font-size: 15px;
+  color: white;
+}
+
+.wrapper {
+  min-height: 100vh;
   position: relative;
 }
 
-.about p {
-  font-size: 15px;
+footer {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #3366FF;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
 }
+
+footer p {
+  padding-top: 2%;
+  color: white;
+}
+
+.info-header {
+  padding-bottom: 70px;
+  padding-top: 70px;
+  width: 100%;
+  background-size: cover;
+  background-image: url(<%= asset_path ('monitor.jpg') %>);
+  background-attachment: fixed;
+  position: relative;
+  text-align: center;
+}
+
+.chatter-info {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.about {
+  font-size: 15px;
+  padding: 30px;
+}
+
+.about h1{
+  padding-bottom: 40px;
+}
+
 .navbar-brand {
-  margin-top:10px;
+  margin-top: 10px;
   font-size: 30px;
   color: #ffffff;
 }
 
-li a{
-  margin-top:12px;
-  font-size: 15px;
-  color: #ffffff;
-}
-
-body{
-}
-
-.input-form {
-  margin-top: 50px;
+.form-group textarea {
+  resize: none;
 }
 
 .main {
   margin-top: 50px;
-}
-
-ul {
-  list-style: none;
-}
-
-textarea {
-  resize: none;
-}
-
-.topic {
-  margin-top: 80px;
-}
-
-.post-btn {
-  float: right;
-  margin-top: 10px;
-  padding: 5px;
-}
-
-.confirm-btn {
-  float: right;
-  padding: 5px;
-  margin: 2px;
-}
-.silence-btn {
-  float: right;
-  padding: 5px;
-  margin-top: 10px;
-}
-
-table　{
-  border-style: none;
 }
 
 .operators {
@@ -91,17 +88,31 @@ table　{
   margin: 2px;
 }
 
-.footer {
-  width: 100%;
-  height: 80px;
-  background-color: #3366FF;
-  position: absolute;
-  bottom: 0;
-  display: table;
+.confirm-operators {
+  float: right;
 }
 
-.footer p {
-  padding-top: 2%;
-  text-align: center;
-  color: #ffffff;
+.confirm-btn {
+  float: left;
+  padding: 5px;
+  margin: 2px;
+}
+
+.edit-btns {
+  float: right;
+}
+
+.edit-btn {
+  float: left;
+  padding: 5px;
+  margin: 2px;
+}
+.topic {
+  margin-top: 80px;
+}
+
+.post-btn {
+  float: right;
+  margin-top: 10px;
+  padding: 5px;
 }
