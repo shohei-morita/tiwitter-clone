@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+TwitterのクローンアプリであるChatterを作成しました。
+主要な機能は以下の通りです。
 
-Things you may want to cover:
+* 投稿機能
 
-* Ruby version
+* 確認機能
 
-* System dependencies
+* 編集機能
 
-* Configuration
+* 削除機能
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 文字数制限(min:1〜max:140）
