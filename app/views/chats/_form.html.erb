@@ -10,7 +10,8 @@
   </div>
   <% end %>
 <div class="form-group">
-  <%= form.text_area :'content', class:'form-control', placeholder:'なんでもささやいてください' %>
-  <%= form.submit 'つぶやく', class:'btn btn-primary' %>
+  <%= form.text_area :'content', class:'form-control', id: 'input-text', rows: 3, placeholder:'なんでもささやいてください' %>
+  <%= form.submit 'しゃべる', class:'post-btn btn-primary' %>
+  <p id="counter">残り140文字</p>
 </div>
 <% end %>

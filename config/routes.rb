@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :chats, except: [:new, :show] do
     collection do
       post :confirm
+      get :info
     end
   end
 end

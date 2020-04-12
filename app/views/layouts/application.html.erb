@@ -8,13 +8,25 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <div class="container">
-      <header>
-        <h2>Chatter〜言いたいことも言えないこんな世の中〜</h2>
-        </header>
-          <%= yield %>
+    <body>
+      <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="">Chatter !</a>
+            <ul class="nav navbar-nav">
+              <li><%= link_to "TOP", chats_path %></li>
+              <li><a href="">INFO</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <%= yield %>
+    </body>
+  <div class="container-fluid">
+    <div class="row">
+      <footer class="footer col-md-12">
+        <p>2020年04月 森田 祥平 制作</p>
+      </footer>
     </div>
-  </body>
+  </div>
 </html>

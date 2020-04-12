@@ -6,6 +6,8 @@ class ChatsController < ApplicationController
     @chat = Chat.new
   end
 
+  def info; end
+
   def create
     @chat = Chat.new(chat_params)
     if params[:back]
@@ -18,8 +20,6 @@ class ChatsController < ApplicationController
       end
     end
   end
-
-  def show; end
 
   def edit; end
 

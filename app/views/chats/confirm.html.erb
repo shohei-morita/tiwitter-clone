@@ -1,9 +1,7 @@
-<h3>以下の内容でつぶやく</h3>
+<h4>以下の内容で本当にささやいても良いですか？</h4>
 <%= form_with(model: @chat, local: true) do |form| %>
-  <div class="form-group">
     <%= form.hidden_field :content %>
-    <p><%= @chat.content %></p>
-    <%= form.submit 'つぶやく', class:'btn-primary' %>
-    <%= form.submit '戻る', name: 'back', class:'btn-info'%>
-  </div>
+    <h3><%= @chat.content %></h3>
+    <%= form.submit 'しゃべる', class:'confirm-btn btn-primary' %>
+    <%= form.submit 'だまる', name: 'back', class:'confirm-btn btn-info'%>
 <% end %>
